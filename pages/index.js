@@ -1,67 +1,63 @@
 import Link from 'next/link';
-import { getPosts } from '../utils/mdx-utils';
-
+// import ArrowIcon from '../../components/ArrowIcon';
+// import CustomLink from '../../components/CustomLink';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout, { GradientBackground } from '../components/Layout';
-import ArrowIcon from '../components/ArrowIcon';
-import { getGlobalData } from '../utils/global-data';
-import SEO from '../components/SEO';
+// import SEO from '../components/SEO';
 
-export default function Index({ posts, globalData }) {
-  return (
-    <Layout>
-      <SEO title={globalData.name} description={globalData.blogTitle} />
-      <Header name={globalData.name} />
-      <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12">
-          {globalData.blogTitle}
-        </h1>
-        <ul className="w-full">
-          {posts.map((post) => (
-            <li
-              key={post.filePath}
-              className="md:first:rounded-t-lg md:last:rounded-b-lg backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 border-b-0 last:border-b hover:border-b hovered-sibling:border-t-0"
-            >
-              <Link
-                as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
-                href={`/posts/[slug]`}
-              >
-                <a className="py-6 lg:py-10 px-6 lg:px-16 block focus:outline-none focus:ring-4">
-                  {post.data.date && (
-                    <p className="uppercase mb-3 font-bold opacity-60">
-                      {post.data.date}
-                    </p>
-                  )}
-                  <h2 className="text-2xl md:text-3xl">{post.data.title}</h2>
-                  {post.data.description && (
-                    <p className="mt-3 text-lg opacity-60">
-                      {post.data.description}
-                    </p>
-                  )}
-                  <ArrowIcon className="mt-4" />
-                </a>
-              </Link>
-            </li>
-          ))}
+export default function Page1(){
+    return(
+        <Layout>
+        <div>
+        <Header name="UID Project"/>
+        {/* <h1 className="text-3xl pt-10">
+            UID Project
+        </h1> */}
+        <div>
+        <h2 className="text-xl pt-10">
+        Problem Statement:
+        </h2>
+        <p className="text-justify">
+        Some people don’t like the weather of the city that they live in but they don’t know how to find the city with suitable weather conditions for them. This app provides a list of recommended cities according to the user’s preferences. This app reduces the effort for users to find a city with suitable weather.
+        </p>
+        <h2 className="text-xl pt-10">
+        User's Goal:
+        </h2>
+        <p className="text-justify">
+            The user has to find a city or a location with a preferable weather which will be comforting to the user.
+        </p>
+        <h2 className="text-xl pt-10">
+        Action:
+        </h2>
+        <div className="justify-center">
+            
+        <ul className="list-group"><li className="list-group-item"><p className="text-justify">
+        •	The user can complete a questionnaire and list their preferences according to the choices mentioned in the questionnaire, for example, if the user prefers sunny weather, they would have to fill out “sunny” in the preferences tab. The users can get recommendations based on the answer of the questionnaire.
+        </p></li>
+        <li className="list-group-item"><p className="text-justify">
+        •	The user will also be able to get details about the weather history of a certain city or a certain location. The user will also get details from the application about the weather details of a certain city or a location, such as the precipitation rate or the average wind speed in a day.
+        </p></li>
+        <li className="list-group-item"><p className="text-justify">
+        •	The user can get other useful information such as the air pollution levels of a city or a location or even the air quality index (AQI) of a location.
+        </p></li>
+        <li className="list-group-item"><p className="text-justify">
+        •	The user can give two cities as inputs and the user will be able to compare the weather of these two cities.
+        </p></li>
         </ul>
-      </main>
-      <Footer copyrightText={globalData.footerText} />
-      <GradientBackground
+        </div>
+        </div>
+        <Footer />
+        </div>
+        <GradientBackground
         variant="large"
-        className="fixed top-20 opacity-40 dark:opacity-60"
+        className="absolute -top-32 opacity-5 dark:opacity-50"
       />
       <GradientBackground
         variant="small"
-        className="absolute bottom-0 opacity-20 dark:opacity-10"
+        className="absolute bottom-0 opacity-10 dark:opacity-30"
       />
-    </Layout>
-  );
-}
-
-export function getStaticProps() {
-  const posts = getPosts();
-  const globalData = getGlobalData();
-
-  return { props: { posts, globalData } };
+        </Layout>
+        
+    )
 }
