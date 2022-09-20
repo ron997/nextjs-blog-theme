@@ -11,9 +11,9 @@ export default function Page1(){
         <Layout>
         <div>
         <Header name="UID Project"/>
-        {/* <h1 className="text-3xl pt-10">
-            UID Project
-        </h1> */}
+        <h1 className="text-3xl pt-10">
+            
+        </h1>
         <div>
         <h2 className="text-xl pt-10">
         Problem Statement:
