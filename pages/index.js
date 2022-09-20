@@ -19,10 +19,10 @@ export default function Page1(){
         Problem Statement:
         </h2>
         <p className="text-justify">
-        Some people don’t like the weather of the city that they live in but they don’t know how to find the city with suitable weather conditions for them. This app provides a list of recommended cities according to the user’s preferences. This app reduces the effort for users to find a city with suitable weather.
+        Some people do not like the weather of the city that they live in but they do not know how to find the city with suitable weather conditions for them. This app provides a list of recommended cities according to the user’s preferences. This app reduces the effort for users to find a city with suitable weather.
         </p>
         <h2 className="text-xl pt-10">
-        User's Goal:
+        User Goal:
         </h2>
         <p className="text-justify">
             The user has to find a city or a location with a preferable weather which will be comforting to the user.
